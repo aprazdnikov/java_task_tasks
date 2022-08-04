@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+                   logicalFilePath="task.test">
+    <include relativeToChangelogFile="true" file="db.changelog-master.xml"/>
+
+    <changeSet id="test-data" author="Aleksandr.Prazdnikov">
+        <sql>
+            INSERT INTO tasks (id, text, number, user_id, group_id) VALUES
+            (1, 'text1', 'number1', 1, 1),
+            (2, 'text2', 'number2', 1, 2);
+
+            COMMIT;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
